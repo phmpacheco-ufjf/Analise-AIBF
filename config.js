@@ -1,43 +1,43 @@
 'use strict';
 
 module.exports = {
-  url: 'https://lumen.netlify.com',
+  url: 'https://pedromesquita.netlify.com',
   pathPrefix: '/',
-  title: 'Blog by John Doe',
-  subtitle: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
+  title: 'Blog Pedro Mesquita',
+  subtitle: 'Um site criado para publicação e divulgação de todo conteúdo científico gerado por mim.',
   copyright: '© All rights reserved.',
   disqusShortname: '',
   postsPerPage: 4,
-  googleAnalyticsId: 'UA-73379983-2',
+  googleAnalyticsId: '',
   useKatex: false,
   menu: [
     {
-      label: 'Articles',
+      label: 'Publicações',
       path: '/'
     },
     {
-      label: 'About me',
+      label: 'Sobre mim',
       path: '/pages/about'
     },
     {
-      label: 'Contact me',
+      label: 'Contate-me',
       path: '/pages/contacts'
     }
   ],
   author: {
-    name: 'John Doe',
+    name: 'Pedro Mesquita',
     photo: '/photo.jpg',
-    bio: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
+    bio: 'Tenho 21 anos, moro em Juiz de Fora, Minas Gerais e sou estudante de Estatística pela Universidade Federal de Juiz de Fora (UFJF).',
     contacts: {
-      email: '',
-      facebook: '#',
+      email: 'pedrohmp36@gmail.com',
+      facebook: 'facebook.com/phmpacheco',
       telegram: '#',
       twitter: '#',
-      github: '#',
+      github: 'https://github.com/phmpacheco-ufjf',
       rss: '',
       vkontakte: '',
-      linkedin: '#',
-      instagram: '#',
+      linkedin: 'https://www.linkedin.com/in/pedro-henrique-pacheco-3384b3139/',
+      instagram: 'https://www.instagram.com/pedrohmp36',
       line: '',
       gitlab: '',
       weibo: '',
