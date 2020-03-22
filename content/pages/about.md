@@ -1,13 +1,15 @@
 ---
-title: "About me"
+title: "Sobre mim"
 template: "page"
-socialImage: "/media/image-2.jpg"
+socialImage: "/media/about_me.jpg"
 ---
 
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
+Meu nome é Pedro Mesquita. Tenho 21 anos, moro atualmente em Juiz de Fora, Minas Gerais e sou estudante de Estatística pela Universidade Federal de Juiz de Fora - UFJF. Nascido e criado em Barra Mansa, uma cidade do interior do Rio de Janeiro, sempre fui apaixonado por matemática e computação. Amo animais e meus maiores Hobbie é tocar instrumentos musicais, independente de qual for, e fotografia.
 
-![Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi.](/media/image-2.jpg)
+Quando entrei na faculdade em 2017 não conhecia muito bem o que era Estatística, estava acostumado apenas com as noções básicas de média e desvio padrão que havia aprendido no Ensino Médio. Foi apenas em 2018 que minha perspectiva mudou. Graças aos incríveis professores que tive, me apaixonei pela Estatística e todas as suas subáreas. Não abandonei a matemática mas a partir daí, minha vida ganhou um novo rumo.
 
-*Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi.*
+![](/media/about_me.jpg)
 
-Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
+*Statisticians, like artists, have the bad habit of falling in love with their models. - G.E.P. Box*
+
+Atualmente, estou no 7º período do curso de Estatística. Sou bolsista de Iniciação Científica do PhD Marcel de Toledo Vieira e estamos estudando análise de dados categóricos, amostragem complexa e análise de dados longitudinais aplicado a uma pesquisa denominada AIBF - Avaliação de Impacto do Bolsa Família, que possui como objetivo estudar os impactos causados pelo Bolsa Família nas famílias brasileiras. Nosso objetivo é avaliar se o Bolsa Família contribuiu para o aumento do Poder de Tomada de Decisão das mulheres no domicílio e se o mesmo contribuiu para o Empoderamento das Mulheres Brasileiras.

@@ -9,10 +9,10 @@ module.exports = [{
       options: {"plugins":[],"modulePath":"C:\\Users\\pedro\\Documents\\Website-Pedro/src/cms/index.js"},
     },{
       plugin: require('../node_modules/gatsby-plugin-google-gtag/gatsby-browser.js'),
-      options: {"plugins":[],"trackingIds":["UA-73379983-2"],"pluginConfig":{"head":true}},
+      options: {"plugins":[],"trackingIds":[""],"pluginConfig":{"head":true}},
     },{
       plugin: require('../node_modules/gatsby-plugin-manifest/gatsby-browser.js'),
-      options: {"plugins":[],"name":"Blog by John Doe","short_name":"Blog by John Doe","start_url":"/","background_color":"#FFF","theme_color":"#F7A046","display":"standalone","icon":"static/photo.jpg"},
+      options: {"plugins":[],"name":"Blog Pedro Mesquita","short_name":"Blog Pedro Mesquita","start_url":"/","background_color":"#FFF","theme_color":"#F7A046","display":"standalone","icon":"static/favicon.png"},
     },{
       plugin: require('../node_modules/gatsby-plugin-offline/gatsby-browser.js'),
       options: {"plugins":[]},

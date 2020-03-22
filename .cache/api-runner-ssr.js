@@ -1,18 +1,18 @@
 var plugins = [{
       plugin: require('C:/Users/pedro/Documents/Website-Pedro/node_modules/gatsby-plugin-feed/gatsby-ssr'),
-      options: {"plugins":[],"query":"\n          {\n            site {\n              siteMetadata {\n                site_url: url\n                title\n                description: subtitle\n              }\n            }\n          }\n        ","feeds":[{"query":"\n              {\n                allMarkdownRemark(\n                  limit: 1000,\n                  sort: { order: DESC, fields: [frontmatter___date] },\n                  filter: { frontmatter: { template: { eq: \"post\" }, draft: { ne: true } } }\n                ) {\n                  edges {\n                    node {\n                      html\n                      fields {\n                        slug\n                      }\n                      frontmatter {\n                        title\n                        date\n                        template\n                        draft\n                        description\n                      }\n                    }\n                  }\n                }\n              }\n            ","output":"/rss.xml","title":"Blog by John Doe"}]},
+      options: {"plugins":[],"query":"\n          {\n            site {\n              siteMetadata {\n                site_url: url\n                title\n                description: subtitle\n              }\n            }\n          }\n        ","feeds":[{"query":"\n              {\n                allMarkdownRemark(\n                  limit: 1000,\n                  sort: { order: DESC, fields: [frontmatter___date] },\n                  filter: { frontmatter: { template: { eq: \"post\" }, draft: { ne: true } } }\n                ) {\n                  edges {\n                    node {\n                      html\n                      fields {\n                        slug\n                      }\n                      frontmatter {\n                        title\n                        date\n                        template\n                        draft\n                        description\n                      }\n                    }\n                  }\n                }\n              }\n            ","output":"/rss.xml","title":"Blog Pedro Mesquita"}]},
     },{
       plugin: require('C:/Users/pedro/Documents/Website-Pedro/node_modules/gatsby-remark-autolink-headers/gatsby-ssr'),
       options: {"plugins":[]},
     },{
       plugin: require('C:/Users/pedro/Documents/Website-Pedro/node_modules/gatsby-plugin-google-gtag/gatsby-ssr'),
-      options: {"plugins":[],"trackingIds":["UA-73379983-2"],"pluginConfig":{"head":true}},
+      options: {"plugins":[],"trackingIds":[""],"pluginConfig":{"head":true}},
     },{
       plugin: require('C:/Users/pedro/Documents/Website-Pedro/node_modules/gatsby-plugin-sitemap/gatsby-ssr'),
       options: {"plugins":[],"query":"\n          {\n            site {\n              siteMetadata {\n                siteUrl: url\n              }\n            }\n            allSitePage(\n              filter: {\n                path: { regex: \"/^(?!/404/|/404.html|/dev-404-page/)/\" }\n              }\n            ) {\n              edges {\n                node {\n                  path\n                }\n              }\n            }\n          }\n        ","output":"/sitemap.xml"},
     },{
       plugin: require('C:/Users/pedro/Documents/Website-Pedro/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
-      options: {"plugins":[],"name":"Blog by John Doe","short_name":"Blog by John Doe","start_url":"/","background_color":"#FFF","theme_color":"#F7A046","display":"standalone","icon":"static/photo.jpg"},
+      options: {"plugins":[],"name":"Blog Pedro Mesquita","short_name":"Blog Pedro Mesquita","start_url":"/","background_color":"#FFF","theme_color":"#F7A046","display":"standalone","icon":"static/favicon.png"},
     },{
       plugin: require('C:/Users/pedro/Documents/Website-Pedro/node_modules/gatsby-plugin-offline/gatsby-ssr'),
       options: {"plugins":[]},
