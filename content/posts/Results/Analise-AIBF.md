@@ -5,7 +5,7 @@ template: "post"
 draft: false
 slug: "analise-aibf"
 category: "Análise AIBF"
-description: "Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum."
+description: "Aqui temos uma analise teste padrão para verificarmos algumas questões interessantes sobre o site. Enquanto escrevo essa descrição, está sendo instalado em meu computador o PostgreSQL"
 socialImage: "/media/image-2.jpg"
 ---
 ----------
