@@ -1,0 +1,134 @@
+---
+title: "Tabelas de Contingência - Análise transversal"
+date: "2020-03-23"
+template: "post"
+draft: false
+slug: "tab-freq-analise-transversal"
+category: "Análise AIBF"
+tags:
+  - "Tabelas de contingência"
+  - "Dados categóricos"
+description: "Partindo do princípio que nossos dados podem ser estudados tanto sob uma perspectiva longitudinal quanto transversal, nesta seção iremos abordar as tabelas de contingência entre a indicatriz de decisão e grupo sob qual o domicílio pertença."
+
+output: 
+  md_document:
+    preserve_yaml: TRUE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(cache=TRUE,
+                  prompt=FALSE,
+                  tidy=TRUE,
+                  comment=NA,
+                  message=FALSE,
+                  warning=FALSE,
+                  echo=FALSE)
+```
+
+```{r}
+library(kableExtra)
+library(janitor)
+library(tidyverse)
+```
+
+# Caso 1 - Análise transversal
+
+## Comida
+
+```{r}
+benef.com.2005 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2005', format = 'markdown')
+```
+
+```{r}
+benef.com.2009 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2009', format = 'markdown')
+```
+
+## Roupas do informante
+
+```{r}
+benef.rou_inf.2005 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2005', format = 'markdown')
+```
+
+```{r}
+benef.rou_inf.2009 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2009', format = 'markdown')
+```
+
+## Roupas do cônjuge
+
+```{r}
+benef.rou_con.2005 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2005', format = 'markdown')
+```
+
+```{r}
+benef.rou_con.2009 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2009', format = 'markdown')
+```
+
+## Roupas dos filhos
+
+```{r}
+benef.rou_fil.2005 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2005', format = 'markdown')
+```
+
+```{r}
+benef.rou_fil.2009 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2009', format = 'markdown')
+```
+
+## Estudo dos filhos
+
+```{r}
+benef.est_fil.2005 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2005', format = 'markdown')
+```
+
+```{r}
+benef.est_fil.2009 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2009', format = 'markdown')
+```
+
+## Saúde dos filhos
+
+```{r}
+benef.sau_fil.2005 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2005', format = 'markdown')
+```
+
+```{r}
+benef.sau_fil.2009 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2009', format = 'markdown')
+```
+
+## Gastos gerais
+
+```{r}
+benef.gas.2005 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2005', format = 'markdown')
+```
+
+```{r}
+benef.gas.2009 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2009', format = 'markdown')
+```
+
+## Trabalho do informante
+
+```{r}
+benef.trab_inf.2005 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2005', format = 'markdown')
+```
+
+```{r}
+benef.trab_inf.2009 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2009', format = 'markdown')
+```
+
+## Trabalho do cônjuge
+
+```{r}
+benef.trab_con.2005 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2005', format = 'markdown')
+```
+
+```{r}
+benef.trab_con.2009 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2009', format = 'markdown')
+```
+
+## Uso de métodos contraceptivos
+
+```{r}
+benef.evi.2005 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2005', format = 'markdown')
+```
+
+```{r}
+benef.evi.2009 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2009', format = 'markdown')
+```
