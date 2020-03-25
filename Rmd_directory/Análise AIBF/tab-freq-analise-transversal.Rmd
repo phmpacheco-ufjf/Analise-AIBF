@@ -8,7 +8,7 @@ category: "Análise AIBF"
 tags:
   - "Tabelas de contingência"
   - "Dados categóricos"
-description: "Partindo do princípio que nossos dados podem ser estudados tanto sob uma perspectiva longitudinal quanto transversal, nesta seção iremos abordar as tabelas de contingência entre a indicatriz de decisão e grupo sob qual o domicílio pertença."
+description: "Partindo do princípio que nossos dados podem ser estudados tanto sob uma perspectiva longitudinal quanto transversal, nesta seção iremos abordar as tabelas de contingência entre a indicatriz de decisão e grupo sob qual o domicílio pertence."
 
 output: 
   md_document:
@@ -29,106 +29,90 @@ knitr::opts_chunk$set(cache=TRUE,
 library(kableExtra)
 library(janitor)
 library(tidyverse)
+library(pander)
 ```
 
-# Caso 1 - Análise transversal
+```{r}
+Total <- sum
+bd.trans.tables <- bd.trans %>% mutate(ct.com = bd.trans$data %>% map(~ table(.x$grupo, .x$indicatriz.com) %>% addmargins(FUN = Total, quiet = T)),
+                          ct.rou_inf = bd.trans$data %>% map(~ table(.x$grupo, .x$indicatriz.rou_inf) %>% addmargins(FUN = Total, quiet = T)),
+                          ct.rou_con = bd.trans$data %>% map(~ table(.x$grupo, .x$indicatriz.rou_con) %>% addmargins(FUN = Total, quiet = T)),
+                          ct.rou_fil = bd.trans$data %>% map(~ table(.x$grupo, .x$indicatriz.rou_fil) %>% addmargins(FUN = Total, quiet = T)),
+                          ct.est_fil = bd.trans$data %>% map(~ table(.x$grupo, .x$indicatriz.est_fil) %>% addmargins(FUN = Total, quiet = T)),
+                          ct.sau_fil = bd.trans$data %>% map(~ table(.x$grupo, .x$indicatriz.sau_fil) %>% addmargins(FUN = Total, quiet = T)),
+                          ct.gas = bd.trans$data %>% map(~ table(.x$grupo, .x$indicatriz.gas) %>% addmargins(FUN = Total, quiet = T)),
+                          ct.trab_inf = bd.trans$data %>% map(~ table(.x$grupo, .x$indicatriz.trab_inf) %>% addmargins(FUN = Total, quiet = T)),
+                          ct.trab_con = bd.trans$data %>% map(~ table(.x$grupo, .x$indicatriz.trab_con) %>% addmargins(FUN = Total, quiet = T)),
+                          ct.evi = bd.trans$data %>% map(~ table(.x$grupo, .x$indicatriz.evi) %>% addmargins(FUN = Total, quiet = T))) %>% select(-2)
+
+```
+
+Partindo do princípio que nossos dados podem ser estudados tanto sob uma perspectiva longitudinal quanto transversal, nesta seção iremos abordar as tabelas de contingência entre a indicatriz de decisão e grupo sob qual o domicílio pertence.
+
+Na fase atual onde estamos não faz sentido falarmos sob análise transversal ou longitudinal, mas estamos fazendo essa diferenciação pois o número de observações será altamente afetado quando formos analisar os dados dos domicílios que responderam à pesquisa tanto em 2005 quanto em 2009.
+
+Dito isso, ao nos referirmos ao caso longitudinal nesta seção, estamos nos referindo aos domicílios que responderam todas as perguntas tanto em 2005 quanto em 2009.
+
+Apresentamos a seguir as tabelas de contingência para o caso transversal de nossa análise referente às perguntas de interesse. Note que para cada tópico de interesse duas tabelas são apresentadas, a primeira é referente ao ano de 2005 e a segunda, ao ano de 2009.
+
+A análise dessas tabelas de contingência, como por exemplo teste qui-quadrado, optimal scaling, etc, serão realizadas posteriormente em outras publicações. Assim, não iremos comentar a respeito dos números brutos optidos a partir das tabelas a seguir, elas ficam como curiosidade e fonte de análise dos estudos que iremos conduzir posteriormente.
 
 ## Comida
 
 ```{r}
-benef.com.2005 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2005', format = 'markdown')
+bd.trans.tables$ct.com %>% pander()
 ```
 
+## Roupas Informante
+
 ```{r}
-benef.com.2009 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2009', format = 'markdown')
+bd.trans.tables$ct.rou_inf %>% pander()
 ```
 
-## Roupas do informante
+## Roupas Cônjuge
 
 ```{r}
-benef.rou_inf.2005 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2005', format = 'markdown')
+bd.trans.tables$ct.rou_con %>% pander()
 ```
 
+## Roupas Filhos
+
 ```{r}
-benef.rou_inf.2009 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2009', format = 'markdown')
+bd.trans.tables$ct.rou_fil %>% pander()
 ```
 
-## Roupas do cônjuge
+## Estudo Filhos
 
 ```{r}
-benef.rou_con.2005 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2005', format = 'markdown')
+bd.trans.tables$ct.est_fil %>% pander()
 ```
 
+## Saúde Filhos
+
 ```{r}
-benef.rou_con.2009 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2009', format = 'markdown')
+bd.trans.tables$ct.sau_fil %>% pander()
 ```
 
-## Roupas dos filhos
+## Gastos Gerais
 
 ```{r}
-benef.rou_fil.2005 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2005', format = 'markdown')
+bd.trans.tables$ct.gas %>% pander()
 ```
 
+## Trabalho Informante
+
 ```{r}
-benef.rou_fil.2009 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2009', format = 'markdown')
+bd.trans.tables$ct.trab_inf %>% pander()
 ```
 
-## Estudo dos filhos
+## Trabalho Cõnjuge
 
 ```{r}
-benef.est_fil.2005 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2005', format = 'markdown')
+bd.trans.tables$ct.trab_con %>% pander()
 ```
 
-```{r}
-benef.est_fil.2009 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2009', format = 'markdown')
-```
-
-## Saúde dos filhos
+## Uso de Métodos Contraceptivos
 
 ```{r}
-benef.sau_fil.2005 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2005', format = 'markdown')
-```
-
-```{r}
-benef.sau_fil.2009 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2009', format = 'markdown')
-```
-
-## Gastos gerais
-
-```{r}
-benef.gas.2005 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2005', format = 'markdown')
-```
-
-```{r}
-benef.gas.2009 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2009', format = 'markdown')
-```
-
-## Trabalho do informante
-
-```{r}
-benef.trab_inf.2005 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2005', format = 'markdown')
-```
-
-```{r}
-benef.trab_inf.2009 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2009', format = 'markdown')
-```
-
-## Trabalho do cônjuge
-
-```{r}
-benef.trab_con.2005 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2005', format = 'markdown')
-```
-
-```{r}
-benef.trab_con.2009 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2009', format = 'markdown')
-```
-
-## Uso de métodos contraceptivos
-
-```{r}
-benef.evi.2005 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2005', format = 'markdown')
-```
-
-```{r}
-benef.evi.2009 %>% as_tibble() %>% tabyl(grupo, indicatriz) %>% adorn_totals(c('row', 'col')) %>% kable(caption = 'Ano 2009', format = 'markdown')
+bd.trans.tables$ct.evi %>% pander()
 ```

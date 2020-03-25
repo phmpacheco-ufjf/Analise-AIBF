@@ -50,7 +50,7 @@ category: "Análise AIBF"
 tags:
   - "Tabelas de contingência"
   - "Dados categóricos"
-description: "Partindo do princípio que nossos dados podem ser estudados tanto sob uma perspectiva longitudinal quanto transversal, nesta seção iremos abordar as tabelas de contingência entre a indicatriz de decisão e grupo sob qual o domicílio pertença."
+description: "Partindo do princípio que nossos dados podem ser estudados tanto sob uma perspectiva longitudinal quanto transversal, nesta seção iremos abordar as tabelas de contingência entre a indicatriz de decisão e grupo sob qual o domicílio pertence."
 
 output: 
   md_document:
@@ -59,4 +59,4 @@ output:
 
 custom_render(category = 'Análise AIBF', slug = 'tab-freq-analise-transversal', date = '2020-03-23')
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
-  
+
